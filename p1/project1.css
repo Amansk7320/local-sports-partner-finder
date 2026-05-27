@@ -1,0 +1,56 @@
+:root {
+    --bg: #0b1220;
+    --card: rgba(255, 255, 255, .06);
+    --card2: rgba(255, 255, 255, .09);
+    --text: rgba(255, 255, 255, .92);
+    --muted: rgba(255, 255, 255, .68);
+    --bg: #07111f;
+    --brand: #00d4ff;
+    --brand2: #7c4dff;
+    /* --brand: #6ee7ff;
+    --brand2: #a78bfa; */
+    --danger: #fb7185;
+    --success: #34d399;
+    --shadow: 0 12px 40px rgba(0, 0, 0, .35);
+    --radius: 16px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    background: linear-gradient(135deg, #0f172a, #1e293b, #111827);
+} */
+
+.navbar{
+     display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px 10px;
+    background-color: var(--bg);
+    color: var(--text);
+    box-shadow: var(--shadow); 
+}
+
+.navbar .nav-inner{
+    display: flex;
+justify-content: space-between;
+    gap: 20px;
+width: 100%;   
+}
+
+.nav-inner .brand{
+display: flex;
+flex-direction: column;
+line-height: 1.2;
+}
+
+.brand strong{
+font-size: 25px;
+}
+
+
+

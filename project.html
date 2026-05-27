@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Sports & Indoor Games Partner Finder</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="project.css" />
+</head>
+
+<body>
+    <div class="nav">
+        <div class="container nav-inner">
+            <div class="brand">
+                <strong>Local Sports & Indoor Games</strong>
+                <span>Partner Finder • Nearby play • Casual matches</span>
+            </div>
+
+            <div class="nav-links" role="navigation" aria-label="Primary">
+                <button class="tab-btn" data-tab-btn="home" aria-current="page">Home</button>
+                <button class="tab-btn" data-tab-btn="login">Register/Login</button>
+                <button class="tab-btn" data-tab-btn="profile">Profile</button>
+                <button class="tab-btn" data-tab-btn="search">Search</button>
+                <button class="tab-btn" data-tab-btn="requests">Play Requests</button>
+                <button class="tab-btn" data-tab-btn="history">History</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- TOAST -->
+        <div id="toast" class="toast hidden" aria-live="polite"></div>
+
+        <!-- HOME -->
+        <section class="hero" data-section="home">
+            <div class="hero-grid">
+                <div class="hero-card">
+                    <span class="badge"> playo.co style concept</span>
+                    <h1>Connect with local sports partners easily</h1>
+                    <p class="lead">
+                        Discover players by <b>game type</b>, <b>location</b>, <b>availability</b> and <b>skill
+                            level</b>.
+                        Send play requests, confirm matches, and meet at society clubhouses or local grounds.
+                    </p>
+                    <div class="cta-row">
+                        <button class="cta primary" data-tab-btn="login">Get started</button>
+                        <button class="cta" id="demoFillBtn" type="button">View demo user</button>
+                    </div>
+                    <hr class="sep" />
+                    <div class="grid">
+                        <div class="card third">
+                            <h3>Quick matchmaking</h3>
+                            <p>Fast search results (<3 seconds target) using filters.</p>
+                        </div>
+                        <div class="card third">
+                            <h3>Healthy recreation</h3>
+                            <p>Encourages indoor/outdoor participation and community bonding.</p>
+                        </div>
+                        <div class="card third">
+                            <h3>Casual & friendly</h3>
+                            <p>No chat in Phase 1. Just requests, confirmations, and meet-ups.</p>
+                        </div>
+                        <div class="card wide">
+                            <h3>Built for Phase 1 scope</h3>
+                            <ul class="list">
+                                <li>User registration/login</li>
+                                <li>Profile: games, skill level, availability, playing location type</li>
+                                <li>Search nearby players and send/receive play requests</li>
+                                <li>Match/play history</li>
+                                <li>Optional: community & admin UI mock</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="section-head">
+                        <h2>Your snapshot</h2>
+                        <span class="badge">Demo mode</span>
+                    </div>
+                    <div class="card" style="background:rgba(255,255,255,.04)">
+                        <p style="margin:.2rem 0 .35rem;color:rgba(255,255,255,.66)">Logged in as</p>
+                        <h3 id="profileName">—</h3>
+                        <p id="profileCity" style="margin:.1rem 0 .65rem;color:rgba(255,255,255,.70)">—</p>
+                        <p style="margin:.35rem 0 .25rem;color:rgba(255,255,255,.66)">Preferred games</p>
+                        <p id="profileGames" style="margin:0 0 .65rem;color:rgba(255,255,255,.90)">—</p>
+
+                        <div style="display:grid;gap:.6rem">
+                            <div><span class="pill warn" style="margin-right:.5rem">Skill</span><span
+                                    id="profileSkill">—</span></div>
+                            <div><span class="pill" style="margin-right:.5rem">Availability</span><span
+                                    id="profileAvailability">—</span></div>
+                            <div><span class="pill" style="margin-right:.5rem">Location</span><span
+                                    id="profileLocationType">—</span></div>
+                        </div>
+                    </div>
+                    <p class="lead" style="margin-top:1rem">
+                        Use the tabs to simulate the full flow: <b>login → profile → search → requests → history</b>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOGIN -->
+        <section class="section" data-section="login">
+            <div class="section-head">
+                <h2>Register / Login</h2>
+                <span class="badge">Client-side demo</span>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Continue as a player</h3>
+                    <p>Type your name. If it matches a demo user, we auto-login; otherwise we create a new mock profile.
+                    </p>
+
+                    <form id="loginForm" class="form">
+                        <div class="row">
+                            <div class="col6">
+                                <label for="loginName">Name</label>
+                                <input id="loginName" name="loginName" placeholder="e.g., Asha" />
+                            </div>
+                            <div class="col6">
+                                <label for="loginCity">City</label>
+                                <input id="loginCity" name="loginCity" placeholder="e.g., Indore" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col6">
+                                <label for="loginArea">Area / Locality</label>
+                                <input id="loginArea" name="loginArea" placeholder="e.g., Vijay Nagar" />
+                            </div>
+                            <div class="col6">
+                                <label>&nbsp;</label>
+                                <div style="height:1px"></div>
+                                <button class="btn primary" type="submit">Login</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <hr class="sep" />
+                    <p style="margin:0;color:rgba(255,255,255,.70)">
+                        Demo users: <b>Asha</b>, <b>Neha</b>, <b>Riya</b>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>What you’ll be able to do</h3>
+                    <ul class="list">
+                        <li>Create/Manage your profile</li>
+                        <li>Pick preferred games: indoor/outdoor</li>
+                        <li>Set availability (days & time)</li>
+                        <li>Choose playing location type</li>
+                        <li>Search and send play requests</li>
+                        <li>Accept/decline requests and view match history</li>
+                    </ul>
+                    <p class="lead" style="margin-top:1rem">
+                        Note: No real-time chat/calling in Phase 1.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFILE -->
+        <section class="section" data-section="profile">
+            <div class="section-head">
+                <h2>Your Profile</h2>
+                <span class="badge">Preferences & availability</span>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Update preferences</h3>
+                    <form id="profileForm" class="form">
+                        <div class="row-games">
+                            <div class="col6">
+                                <label>Preferred Games</label>
+                                <div style="display:grid;gap:.45rem;margin-top:.2rem">
+                                    <label
+                                        style="display:flex;gap:.6rem;align-items:center;font-weight:700;color:rgba(255,255,255,.86)">
+                                        <input type="checkbox" name="games" value="Badminton" /> Badminton
+                                    </label>
+                                    <label
+                                        style="display:flex;gap:.6rem;align-items:center;font-weight:700;color:rgba(255,255,255,.86)">
+                                        <input type="checkbox" name="games" value="Table Tennis" /> Table Tennis
+                                    </label>
+                                    <label
+                                        style="display:flex;gap:.6rem;align-items:center;font-weight:700;color:rgba(255,255,255,.86)">
+                                        <input type="checkbox" name="games" value="Chess" /> Chess
+                                    </label>
+                                    <label
+                                        style="display:flex;gap:.6rem;align-items:center;font-weight:700;color:rgba(255,255,255,.86)">
+                                        <input type="checkbox" name="games" value="Carrom" /> Carrom
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col6">
+                                <label>Indoor / Outdoor</label>
+                                <div style="display:grid;gap:.45rem;margin-top:.2rem">
+                                    <label
+                                        style="display:flex;gap:.6rem;align-items:center;font-weight:700;color:rgba(255,255,255,.86)">
+                                        <input type="checkbox" name="indoorOutdoor" value="Indoor" /> Indoor
+                                    </label>
+                                    <label
+                                        style="display:flex;gap:.6rem;align-items:center;font-weight:700;color:rgba(255,255,255,.86)">
+                                        <input type="checkbox" name="indoorOutdoor" value="Outdoor" /> Outdoor
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-games">
+                            <div class="col6">
+                                <label for="skillLevel">Skill level</label>
+                                <select id="skillLevel" name="skillLevel">
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate" selected>Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                </select>
+                            </div>
+                            <div class="col6">
+                                <label for="locationType">Playing location</label>
+                                <select id="locationType" name="locationType">
+                                    <option value="Home">Home</option>
+                                    <option value="Society clubhouse" selected>Society clubhouse</option>
+                                    <option value="Local ground">Local ground</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <hr class="sep" />
+
+                        <div class="row-games">
+                            <div class="col6">
+                                <label>Availability (days)</label>
+                                <div style="display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.35rem">
+                                    <label style="display:flex;gap:.45rem;align-items:center">
+                                        <input type="checkbox" name="days" value="Mon" /> Mon
+                                    </label>
+                                    <label style="display:flex;gap:.45rem;align-items:center">
+                                        <input type="checkbox" name="days" value="Tue" /> Tue
+                                    </label>
+                                    <label style="display:flex;gap:.45rem;align-items:center">
+                                        <input type="checkbox" name="days" value="Wed" /> Wed
+                                    </label>
+                                    <label style="display:flex;gap:.45rem;align-items:center">
+                                        <input type="checkbox" name="days" value="Thu" /> Thu
+                                    </label>
+                                    <label style="display:flex;gap:.45rem;align-items:center">
+                                        <input type="checkbox" name="days" value="Fri" /> Fri
+                                    </label>
+                                    <label style="display:flex;gap:.45rem;align-items:center">
+                                        <input type="checkbox" name="days" value="Sat" /> Sat
+                                    </label>
+                                    <label style="display:flex;gap:.45rem;align-items:center">
+                                        <input type="checkbox" name="days" value="Sun" /> Sun
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col6">
+                                <label for="timeSlot">Preferred time</label>
+                                <input id="timeSlot" name="timeSlot" placeholder="e.g., 6:00 PM - 8:00 PM" />
+                            </div>
+                        </div>
+
+                        <div class="actions">
+                            <button class="btn primary" type="submit">Save Profile</button>
+                            <button class="btn" type="button" id="logoutBtn">Logout</button>
+                            <button class="btn" type="button" data-tab-btn="search">Go to Search</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h3>Profile preview</h3>
+                    <p><b>Preferred games:</b> <span id="profileGames">—</span></p>
+                    <p><b>Skill level:</b> <span id="profileSkill">—</span></p>
+                    <p><b>Availability:</b> <span id="profileAvailability">—</span></p>
+                    <p><b>Playing location:</b> <span id="profileLocationType">—</span></p>
+                    <hr class="sep" />
+                    <p class="lead" style="margin-top:0">
+                        This information is used to find nearby players and create play requests.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEARCH -->
+        <section class="section" data-section="search">
+            <div class="section-head">
+                <h2>Search Nearby Players</h2>
+                <span class="badge">Filter by game • location • availability</span>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Search filters</h3>
+                    <form id="searchForm" class="form">
+                        <div class="row">
+                            <div class="col6">
+                                <label for="searchGameType">Game type</label>
+                                <select id="searchGameType">
+                                    <option value="">Any</option>
+                                    <option value="Badminton">Badminton</option>
+                                    <option value="Table Tennis">Table Tennis</option>
+                                    <option value="Chess">Chess</option>
+                                    <option value="Carrom">Carrom</option>
+                                </select>
+                            </div>
+                            <div class="col6">
+                                <label for="searchLocationType">Playing location type</label>
+                                <select id="searchLocationType">
+                                    <option value="">Any</option>
+                                    <option value="Home">Home</option>
+                                    <option value="Society clubhouse">Society clubhouse</option>
+                                    <option value="Local ground">Local ground</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col12">
+                                <label for="searchArea">Area / locality contains</label>
+                                <input id="searchArea" placeholder="e.g., Vijay" />
+                            </div>
+                        </div>
+
+                        <div class="actions">
+                            <button class="btn primary" type="submit">Search</button>
+                            <button class="btn" type="button" data-tab-btn="requests">View Requests</button>
+                            <button class="btn" type="button" data-tab-btn="history">View History</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card wide">
+                    <h3>Nearby results (demo)</h3>
+                    <p style="margin-top:.1rem;color:rgba(255,255,255,.65)">
+                        Showing a limited list. In production, search would use location APIs + indexing for speed.
+                    </p>
+
+                    <div style="overflow:auto">
+                        <table class="table" aria-label="Search results">
+                            <thead>
+                                <tr>
+                                    <th>Player</th>
+                                    <th>Games</th>
+                                    <th>Skill</th>
+                                    <th>Time</th>
+                                    <th>Location Type</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultsTbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REQUESTS -->
+        <section class="section" data-section="requests">
+            <div class="section-head">
+                <h2>Play Requests</h2>
+                <span class="badge">Send • receive • confirm</span>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Incoming requests</h3>
+                    <div style="overflow:auto">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>From</th>
+                                    <th>Game</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="incomingRequestsTbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Outgoing requests</h3>
+                    <div style="overflow:auto">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>To</th>
+                                    <th>Game</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="outgoingRequestsTbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HISTORY -->
+        <section class="section" data-section="history">
+            <div class="section-head">
+                <h2>Match / Play History</h2>
+                <span class="badge">Requests that became confirmations</span>
+            </div>
+
+            <div class="card wide">
+                <div style="overflow:auto">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Partner</th>
+                                <th>Game</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th>When</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT / PRD summary embedded in home (simple) -->
+        <section class="section" style="padding-bottom:3rem" aria-hidden="true"></section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Local Sports & Indoor Games Partner Finder</p>
+        </div>
+    </footer>
+    <script src="project.js"></script>
+</body>
+</html>
