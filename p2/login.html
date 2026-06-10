@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hometown Hub – Digital Community Platform-Login Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <div class="brand">
+                <strong>Hometown Hub</strong>
+                <span>Digital Community Platform</span>
+            </div>
+            <div class="nav-links" role="navigation" aria-label="Primary">
+                <button class="tab-btn" data-tab-btn="home" onclick="window.location.href='index.html'">Home</button>
+                <button class="tab-btn" data-tab-btn="communities" onclick="window.location.href='community.html'">Communities</button>
+                <button class="tab-btn" data-tab-btn="events" onclick="window.location.href='events.html'">Events</button>
+                <button class="tab-btn" data-tab-btn="profile" onclick="window.location.href='profile.html'">Profile</button>
+                <button class="tab-btn" data-tab-btn="login" aria-current="page">Login</button>
+            </div>
+        </div>
+    </nav>
+    <section class="login">
+            <form id="loginForm" action="">
+                <label for="name">Enter email</label>
+                <input type="email" name="email" id="email" required>
+                <label for="password">Enter Password</label>
+                <input type="password" name="password" id="password" required>
+                <div class="btn">
+                    <button type="submit">Login</button>
+                </div>
+                <hr class="sep">
+                <div class="other">
+                    <p>Don't have an account ? </p>
+                    <a href="#">Register</a>
+                </div>
+            </form>
+    </section>
+
+     <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-about">
+                <h2>🏡 Hometown Hub</h2>
+                <p>
+                    Connecting people with their hometown communities,
+                    local events, and cultural roots.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Communities</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Community</h3>
+                <p>📍 India</p>
+                <p>📧 support@hometownhub.com</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Hometown Hub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
